@@ -12,6 +12,10 @@ $vb-banner-bg: linear-gradient(135deg, #eae7f3 0%, #f0e8f5 50%, #fce8d8 100%);
 // ─── Page header ──────────────────────────────────────────────────────────────
 .vb-page {
   background-color: $vb-cream;
+  background-image: url('/images/ivb/Фон копия.png');
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 
 .vb-page-header {
