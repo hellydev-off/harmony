@@ -1,0 +1,172 @@
+$footer-border: #e2e6ea;
+$footer-text: #5e6b7e;
+$footer-navy: #1b3a5c;
+
+.site-footer {
+  background: #fff;
+  color: $footer-text;
+
+  a {
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $footer-navy;
+      text-decoration: none;
+    }
+  }
+
+  // ── Логотип + контакты ────────────────────────────────────────────────────
+  &__top {
+    padding: 28px 0;
+  }
+
+  &__top-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__logo {
+    display: inline-block;
+    flex-shrink: 0;
+
+    img {
+      height: 56px;
+      display: block;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 22px;
+    border: 1.5px solid $footer-border;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #222;
+    white-space: nowrap;
+
+    img,
+    svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      border-color: $footer-navy;
+      color: $footer-navy;
+    }
+  }
+
+  // ── Услуги и цены ─────────────────────────────────────────────────────────
+  &__services {
+    padding: 28px 0 32px;
+  }
+
+  &__services-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 16px;
+  }
+
+  &__services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px 24px;
+  }
+
+  &__services-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    a {
+      font-size: 16px;
+      color: $footer-text;
+
+      &:hover {
+        color: $footer-navy;
+      }
+    }
+  }
+
+  // ── Навигация ─────────────────────────────────────────────────────────────
+  &__nav-section {
+    border-top: 1px solid $footer-border;
+    border-bottom: 1px solid $footer-border;
+    padding: 22px 0;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111;
+
+      &:hover {
+        color: $footer-navy;
+      }
+    }
+  }
+
+  // ── Нижняя строка ─────────────────────────────────────────────────────────
+  &__bottom {
+    padding: 20px 0 24px;
+  }
+
+  &__bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__copy {
+    font-size: 14px;
+    color: #777;
+    margin: 0;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  &__legal {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+
+    a {
+      font-size: 14px;
+      color: #555;
+      text-decoration: underline;
+
+      &:hover {
+        color: $footer-navy;
+      }
+    }
+  }
+
+  &__seo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    img {
+      height: 38px;
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.twig": "html"
+  },
+  "emmet.includeLanguages": {
+    "html": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "auto-close-tag.activationOnLanguage": ["*"],
+  "auto-rename-tag.activationOnLanguage": ["*"]
+}

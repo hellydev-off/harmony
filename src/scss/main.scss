@@ -1,0 +1,31 @@
+// ─── Bootstrap 3 ──────────────────────────────────────────────────────────────
+// Переменные переопределяются ДО импорта Bootstrap
+@import "components/variables";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// ─── Компоненты ───────────────────────────────────────────────────────────────
+@import "components/fonts";
+@import "components/header";
+@import "components/footer";
+@import "components/product-card";
+@import "components/catalog";
+@import "components/news";
+@import "components/doctors";
+@import "components/doctor-profile";
+@import "components/about";
+@import "components/index";
+@import "components/pages";
+@import "components/gynecology";
+@import "components/reviews-slider";
+@import "components/vedenie";
+@import "components/alerts";
+
+// ─── Responsive layer (must stay LAST so breakpoint overrides win) ─────────────
+@import "components/responsive";
+
+// ─── Global overflow fix ───────────────────────────────────────────────────────
+html,
+body {
+  overflow-x: hidden;
+  background-color: #f9f3ed;
+}

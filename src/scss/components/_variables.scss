@@ -1,0 +1,28 @@
+// ─── Цвета ────────────────────────────────────────────────────────────────────
+$brand-primary:   #2c6e49;
+$brand-secondary: #4c956c;
+$text-color:      #333333;
+$link-color:      $brand-primary;
+$link-hover-color: darken($brand-primary, 10%);
+
+// ─── Типографика ──────────────────────────────────────────────────────────────
+$font-family-base: 'Inter', Arial, sans-serif;
+$font-size-base:   15px;
+$line-height-base: 1.6;
+
+// ─── Сетка Bootstrap 3 ────────────────────────────────────────────────────────
+$grid-columns:      12;
+$grid-gutter-width: 30px;
+
+// ─── Navbar ───────────────────────────────────────────────────────────────────
+$navbar-height:          60px;
+$navbar-default-bg:      #ffffff;
+$navbar-default-border:  #e0e0e0;
+$navbar-default-color:   $text-color;
+$navbar-default-link-color:       $text-color;
+$navbar-default-link-hover-color: $brand-primary;
+$navbar-default-link-active-color: $brand-primary;
+
+// ─── Кнопки ───────────────────────────────────────────────────────────────────
+$btn-primary-bg:     $brand-primary;
+$btn-primary-border: darken($brand-primary, 5%);

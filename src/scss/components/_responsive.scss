@@ -1,0 +1,644 @@
+// ══════════════════════════════════════════════════════════════════════════════
+// RESPONSIVE LAYER
+// Centralised breakpoint overrides for all custom (non-Bootstrap) components.
+// Layout-only (grid/flex/size/spacing/font-size) — no colour variables here,
+// so it stays independent of the per-component $navy/$cream definitions.
+//
+// Breakpoints (aligned with Bootstrap 3):
+//   1199px ↓  laptop / md
+//    991px ↓  tablet / sm  (mobile menu kicks in here)
+//    767px ↓  phone  / xs
+//    575px ↓  small phone
+// ══════════════════════════════════════════════════════════════════════════════
+
+// ─── md and down (≤1199px) ────────────────────────────────────────────────────
+@media (max-width: 1199px) {
+  // Index — big display type
+  .section-title,
+  .page-title,
+  .about-center__title,
+  .doc-banner__title,
+  .dp-hero__name,
+  .dp-section__title,
+  .enc-title {
+    font-size: 34px;
+  }
+
+  .stat-item__number {
+    font-size: 130px;
+  }
+  .stat-item--2 {
+    margin-left: 220px;
+  }
+  .stat-item--3 {
+    margin-left: 460px;
+  }
+
+  // Reduce padded wrapper on laptops
+  .cont-border {
+    padding: 28px;
+    border-radius: 48px;
+  }
+
+  // Hero banner
+  .hero-banner__price-new {
+    font-size: 42px;
+  }
+  .hero-banner__title {
+    font-size: 28px;
+  }
+
+  // Specializations 4 → 3 cols
+  .spec-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // ── Doc-banner: hide decorative images so the card doesn't overflow ───────────
+  .doc-banner__images {
+    display: none;
+  }
+  .doc-banner__link {
+    font-size: 18px;
+  }
+  .doc-banner__content {
+    padding: 32px 40px;
+  }
+
+  // Contact CTA phone: row layout compresses text column at ~950–1100px
+  .contact-cta__phone {
+    font-size: 26px;
+  }
+}
+
+// ─── Tablet and down (≤991px) ─────────────────────────────────────────────────
+@media (max-width: 991px) {
+  // ── Header: swap desktop nav for burger ──────────────────────────────────────
+  .header-nav {
+    display: none;
+  }
+  .header-burger {
+    display: flex;
+  }
+
+  // Mobile menu panel lives off-canvas here; `.is-open` slides it in (JS adds the class)
+  .mobile-menu {
+    display: flex;
+  }
+
+  // Topbar: keep contacts, drop the heavy action buttons (they live in burger menu)
+  .topbar__actions {
+    display: none;
+  }
+  .topbar__contacts {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  // ── Section paddings ─────────────────────────────────────────────────────────
+  .section {
+    padding: 40px 0;
+  }
+
+  // ── Index: hero banner stacks ────────────────────────────────────────────────
+  .hero-banner__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-banner__left {
+    width: 280px;
+    height: 300px;
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+  .hero-banner__price {
+    justify-content: center;
+  }
+
+  // ── About center: reset the staircase offsets ────────────────────────────────
+  .about-center {
+    min-height: 0;
+    padding: 40px 0;
+  }
+  .about-center__bg-text,
+  .about-center__stethoscope,
+  .about-center__mask {
+    display: none;
+  }
+  .stat-item {
+    margin-left: 0 !important;
+  }
+  .stat-item__number {
+    font-size: 96px;
+  }
+
+  // Reduce padded wrapper on tablet
+  .cont-border {
+    padding: 20px;
+    border-radius: 36px;
+  }
+
+  // ── About text + slider ──────────────────────────────────────────────────────
+  .about-text-section__inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .about-text-section__slider-wrap {
+    width: 100%;
+  }
+
+  // ── Clinic legal ─────────────────────────────────────────────────────────────
+  .clinic-legal__inner {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .clinic-legal__photo {
+    width: 100%;
+  }
+
+  // ── Doc banner ───────────────────────────────────────────────────────────────
+  .doc-banner__card {
+    flex-direction: column;
+  }
+  .doc-banner__content {
+    padding: 28px 24px;
+  }
+  .doc-banner__images {
+    display: none;
+  }
+  .doc-banner__text-cont {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  // ── Control authorities 3 → 1 ────────────────────────────────────────────────
+  .ctrl-auth__details {
+    grid-template-columns: 1fr;
+  }
+
+  // ── Specializations 3 → 2 ────────────────────────────────────────────────────
+  .spec-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // ── Doctors grids ────────────────────────────────────────────────────────────
+  .doctors-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .featured-doctors__grid {
+    grid-template-columns: 1fr;
+  }
+
+  // ── Encyclopedia ─────────────────────────────────────────────────────────────
+  .enc-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .enc-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  // ── Doctor profile hero stacks ───────────────────────────────────────────────
+  .dp-hero {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .dp-hero__photo {
+    width: 240px;
+  }
+  .dp-hero__meta {
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  // ── Contact CTA stacks ───────────────────────────────────────────────────────
+  .contact-cta {
+    margin-bottom: 40px;
+  }
+  .contact-cta__inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+  .contact-cta__image {
+    align-self: center;
+  }
+  .contact-cta__actions {
+    width: 100%;
+  }
+  .contact-cta__actions a {
+    min-width: 0;
+    padding: 16px 24px;
+  }
+
+  // ── Footer ───────────────────────────────────────────────────────────────────
+  .site-footer__top-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .site-footer__services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 20px;
+  }
+  .site-footer__nav {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    justify-content: flex-start;
+  }
+  .site-footer__nav a {
+    font-size: 18px;
+  }
+  .site-footer__bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  // ── Gynecology ───────────────────────────────────────────────────────────────
+  .gyno-intro__inner {
+    grid-template-columns: 1fr;
+  }
+  .gyno-reasons__grid,
+  .gyno-care__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gyno-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // ── Ведение беременности ─────────────────────────────────────────────────────
+  .vb-doctors-row {
+    flex-wrap: wrap;
+  }
+  .vb-doctors-row--3 .vb-doctor-card {
+    flex: 1 1 calc(50% - 10px);
+  }
+  .vb-doctors-row--2 .vb-doctor-card {
+    flex: 1 1 calc(50% - 10px);
+  }
+  .vb-specialists-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .vb-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .vb-benefits-grid--bottom {
+    max-width: 100%;
+  }
+}
+
+// ─── Phone and down (≤767px) ──────────────────────────────────────────────────
+@media (max-width: 767px) {
+  // ── Header: shrink logo so it doesn't crowd the burger button ────────────────
+  .header-main {
+    padding: 12px 0;
+  }
+  .header-logo__icon {
+    max-height: 44px;
+    width: auto;
+  }
+
+  // Breadcrumb: allow flex items to wrap so long paths don't compress mid-word
+  .vb-breadcrumb {
+    flex-wrap: wrap;
+    gap: 3px 5px;
+  }
+
+  // Display type
+  .section-title,
+  .page-title,
+  .about-center__title,
+  .doc-banner__title,
+  .dp-hero__name,
+  .dp-section__title,
+  .enc-title,
+  .reviews-page-header h1 {
+    font-size: 26px;
+  }
+
+  .section-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  // Section-header right side: spread link & nav-buttons across full row
+  .section-header__right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  // Hero banner price
+  .hero-banner__price-new {
+    font-size: 34px;
+  }
+  .hero-banner__price-old {
+    font-size: 22px;
+  }
+
+  // ── Doctors filter: stack search + specialty vertically ───────────────────────
+  .doctors-filter__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .doctors-filter__sep {
+    width: 100%;
+    height: 1.5px;
+  }
+  .doctors-filter__specialty {
+    width: 100%;
+  }
+
+  // About center
+  .about-center {
+    padding: 32px 0;
+  }
+  .stat-item {
+    gap: 12px;
+  }
+  .stat-item__number {
+    font-size: 72px;
+  }
+
+  // CTA row 3 → 1
+  .cta-row__inner {
+    grid-template-columns: 1fr;
+  }
+
+  // Reduce padded wrapper on phones
+  .cont-border {
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  // New doctor card stacks; use center-crop so the face is fully visible
+  .new-doctor-card {
+    flex-direction: column;
+  }
+  .new-doctor-card__photo {
+    width: 100%;
+    height: 200px;
+    img {
+      object-position: center 15%;
+    }
+  }
+
+  // Specializations → 1
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+
+  // Doctors grid 3 → 2
+  .doctors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // Encyclopedia → 1 already 2; keep 2 for cards, drop only on small
+  // Reviews / news list items stack
+  .news-list-item {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .news-list-item__thumb {
+    width: 100%;
+    height: 180px;
+  }
+
+  .reviews-page-header {
+    flex-direction: column;
+  }
+  .review-card__name {
+    font-size: 24px;
+  }
+  .review-card__text,
+  .review-card__doctor {
+    font-size: 16px;
+  }
+
+  // Doctor profile
+  .dp-hero__photo {
+    width: 100%;
+    max-width: 280px;
+  }
+  .dp-diplomas__row {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .dp-diplomas__text {
+    font-size: 18px;
+  }
+  .dp-hero__btn,
+  .dp-reviews__btn {
+    display: block;
+    text-align: center;
+    padding: 16px 24px;
+  }
+
+  // Buttons that were oversized
+  .btn-leave-review {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+
+  // Footer services 2 → 1
+  .site-footer__services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  // Footer contacts: let the second button wrap instead of overflowing the screen
+  .site-footer__contacts {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  // Gynecology
+  .gyno-reasons__grid,
+  .gyno-care__grid,
+  .gyno-offer__grid,
+  .gyno-steps {
+    grid-template-columns: 1fr;
+  }
+
+  // ── Gynecology: CTA buttons + steps fix ──────────────────────────────────────
+  .gyno-faq__actions {
+    flex-direction: column;
+  }
+  .gyno-prices__cta {
+    grid-template-columns: 1fr;
+  }
+  // Remove desktop-only overlap trick; reduce padding for narrow screens
+  .gyno-step {
+    margin-left: 0;
+    padding: 20px 16px;
+  }
+  .gyno-section-title {
+    font-size: 22px;
+  }
+  // Alert box: smaller icon + tighter padding so text isn't squished on narrow screens
+  .gyno-alert {
+    padding: 16px 20px;
+    gap: 14px;
+  }
+  .gyno-alert__icon {
+    font-size: 40px;
+  }
+  .gyno-alert p {
+    font-size: 14px;
+  }
+
+  // ── VB page ───────────────────────────────────────────────────────────────────
+  // Hero banner CTA: text overlaps baked-in image text on narrow screens —
+  // hide the label, show only the phone button tucked to the bottom-right corner
+  .vb-hero__cta {
+    left: auto;
+    right: 16px;
+    bottom: 16px;
+    padding: 6px;
+    span {
+      display: none;
+    }
+  }
+  // Screening slider overlays: same principle
+  .vb-screening-slider__overlay {
+    bottom: 8px;
+    right: 8px;
+  }
+  .vb-screening-slider__overlay-btn {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+  .vb-screening-slider__overlay-cta {
+    padding: 6px;
+    span {
+      display: none;
+    }
+  }
+  // Contact CTA phone number
+  .contact-cta__phone {
+    font-size: 22px;
+  }
+
+  // Ведение беременности
+  .vb-specialists-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .vb-doctors-row--3 .vb-doctor-card,
+  .vb-doctors-row--2 .vb-doctor-card {
+    flex: 1 1 100%;
+  }
+  .vb-section-title,
+  .vb-title {
+    font-size: 24px;
+  }
+
+  // Reviews slider — full-width action buttons
+  .reviews-slider__actions {
+    flex-direction: column;
+  }
+  .reviews-slider__btn {
+    min-width: 0;
+    width: 100%;
+  }
+  .reviews-slider__wrap {
+    gap: 8px;
+  }
+  .review-card {
+    padding: 20px;
+  }
+}
+
+// ─── Small phone (≤575px) ─────────────────────────────────────────────────────
+@media (max-width: 575px) {
+  .header-logo__icon {
+    max-height: 36px;
+  }
+
+  .section-title,
+  .page-title {
+    font-size: 22px;
+  }
+
+  .stat-item {
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+  }
+  .stat-item__number {
+    font-size: 56px;
+  }
+
+  // Minimal padding on tiny phones
+  .cont-border {
+    padding: 12px;
+    border-radius: 16px;
+  }
+  .about-center {
+    padding: 24px 0;
+  }
+
+  // Doctors grid 2 → 1
+  .doctors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  // Encyclopedia 2 → 1
+  .enc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  // Specialists (ведение) 2 → 1
+  .vb-specialists-grid {
+    grid-template-columns: 1fr;
+  }
+  .vb-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  .vb-benefit-item__text {
+    max-width: 100%;
+  }
+
+  // Partner cards smaller
+  .partner-card {
+    height: 120px;
+    padding: 18px;
+  }
+
+  // Footer contacts stack full-width on small phones
+  .site-footer__contacts {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .site-footer__contact-btn {
+    justify-content: center;
+  }
+
+  // Hide swiper side arrows that hang outside container on tiny screens
+  .care-swiper-prev {
+    left: 4px;
+  }
+  .care-swiper-next {
+    right: 4px;
+  }
+
+  // Pagination: reduce item size so 8 buttons fit in ~345px container
+  .pg {
+    gap: 4px;
+  }
+  .pg__item {
+    min-width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+
+  .contact-cta__phone {
+    font-size: 18px;
+  }
+}
+
+// ─── Single-slide disease card (Swiper shows 1 slide below 480px) ─────────────
+@media (max-width: 479px) {
+  // Change portrait aspect-ratio to landscape so card isn't 460px tall
+  .gyno-placeholder--disease {
+    aspect-ratio: 3/2;
+  }
+}
