@@ -494,7 +494,30 @@ $text-dark: #333333;
     }
 
     .swiper-pagination {
-      bottom: 12px;
+      position: absolute;
+      bottom: 14px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      padding: 0 16px;
+    }
+
+    .swiper-pagination-bullet {
+      flex: 1;
+      max-width: 60px;
+      height: 3px;
+      border-radius: 2px;
+      background: rgba(#fff, 0.5);
+      opacity: 1;
+      margin: 0;
+      transition: background 0.25s;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #fff;
     }
   }
 }
