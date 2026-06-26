@@ -118,6 +118,7 @@
   .about-center {
     min-height: 0;
     padding: 40px 0;
+    margin-bottom: 40px;
   }
   .about-center__bg-text,
   .about-center__stethoscope,
@@ -277,7 +278,11 @@
     flex: 1 1 calc(50% - 10px);
   }
   .vb-specialists-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .vb-specialist-card__photo {
+    width: 150px;
+    height: 150px;
   }
   .vb-benefits-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -348,15 +353,31 @@
     width: 100%;
   }
 
-  // About center
+  // About center — stats in a row
   .about-center {
-    padding: 32px 0;
+    padding: 28px 0;
+  }
+  .about-center__title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+  .about-center__stats {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
   }
   .stat-item {
-    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 0;
   }
   .stat-item__number {
-    font-size: 72px;
+    font-size: 96px;
+    letter-spacing: -3px;
+  }
+  .stat-item__label {
+    font-size: 13px;
   }
 
   // CTA row 3 → 1
@@ -376,10 +397,23 @@
   }
   .new-doctor-card__photo {
     width: 100%;
-    height: 200px;
+    height: 260px;
     img {
-      object-position: center 15%;
+      object-position: top center;
     }
+  }
+
+  // Children banner — smaller title and button on mobile
+  .children-banner__title {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    margin-bottom: 0;
+  }
+  .children-banner__link {
+    right: 16px;
+    bottom: 16px;
+    padding: 8px 16px;
+    font-size: 13px;
   }
 
   // Specializations → 1
@@ -405,6 +439,15 @@
 
   .reviews-page-header {
     flex-direction: column;
+  }
+  .reviews-rating-bar {
+    font-size: 18px;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    &__count {
+      font-size: 15px;
+    }
   }
   .review-card__name {
     font-size: 24px;
@@ -437,6 +480,19 @@
   .btn-leave-review {
     font-size: 18px;
     padding: 12px 24px;
+    margin-bottom: 16px;
+  }
+
+  // Reviews list-footer: stack button + pagination vertically
+  .list-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 28px 0 40px;
+  }
+  .btn-show-more {
+    width: 100%;
+    text-align: center;
   }
 
   // Footer services 2 → 1
@@ -522,6 +578,10 @@
   .vb-specialists-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .vb-specialist-card__photo {
+    width: 150px;
+    height: 150px;
+  }
   .vb-doctors-row--3 .vb-doctor-card,
   .vb-doctors-row--2 .vb-doctor-card {
     flex: 1 1 100%;
@@ -531,7 +591,13 @@
     font-size: 24px;
   }
 
-  // Reviews slider — full-width action buttons
+  // Reviews slider
+  .reviews-slider {
+    margin-bottom: 24px;
+  }
+  .review-card__toggle {
+    display: block;
+  }
   .reviews-slider__actions {
     flex-direction: column;
   }
@@ -540,7 +606,26 @@
     width: 100%;
   }
   .reviews-slider__wrap {
-    gap: 8px;
+    display: block;
+    position: relative;
+    padding-bottom: 64px;
+    margin-bottom: 16px;
+  }
+  .reviews-slider__clip {
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+  }
+  .reviews-slider__prev,
+  .reviews-slider__next {
+    position: absolute;
+    bottom: 0;
+  }
+  .reviews-slider__prev {
+    left: calc(50% - 52px);
+  }
+  .reviews-slider__next {
+    left: calc(50% + 8px);
   }
   .review-card {
     padding: 20px;
@@ -553,18 +638,42 @@
     max-height: 36px;
   }
 
+  .reviews-rating-bar {
+    font-size: 16px;
+    gap: 6px;
+
+    &__count {
+      font-size: 13px;
+      width: 100%;
+    }
+  }
+  .btn-leave-review {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    padding: 11px 20px;
+  }
+
+  // Children banner — icon-only button on tiny screens
+  .children-banner__link {
+    padding: 8px 10px;
+    gap: 0;
+  }
+  .children-banner__link-text {
+    display: none;
+  }
+
   .section-title,
   .page-title {
     font-size: 22px;
   }
 
-  .stat-item {
-    flex-direction: column;
-    gap: 4px;
-    align-items: flex-start;
-  }
   .stat-item__number {
-    font-size: 56px;
+    font-size: 64px;
+    letter-spacing: -2px;
+  }
+  .stat-item__label {
+    font-size: 11px;
   }
 
   // Minimal padding on tiny phones
@@ -573,7 +682,7 @@
     border-radius: 16px;
   }
   .about-center {
-    padding: 24px 0;
+    padding: 20px 0;
   }
 
   // Doctors grid 2 → 1
@@ -586,9 +695,13 @@
     grid-template-columns: 1fr;
   }
 
-  // Specialists (ведение) 2 → 1
+  // Specialists (ведение) 2 → 2 (keep 2-col so cards stay visible)
   .vb-specialists-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .vb-specialist-card__photo {
+    width: 130px;
+    height: 130px;
   }
   .vb-benefits-grid {
     grid-template-columns: 1fr;
@@ -623,11 +736,17 @@
   // Pagination: reduce item size so 8 buttons fit in ~345px container
   .pg {
     gap: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .pg__item {
     min-width: 34px;
     height: 34px;
     font-size: 13px;
+  }
+  .list-footer {
+    padding: 20px 0 32px;
+    gap: 16px;
   }
 
   .contact-cta__phone {
@@ -640,5 +759,16 @@
   // Change portrait aspect-ratio to landscape so card isn't 460px tall
   .gyno-placeholder--disease {
     aspect-ratio: 3/2;
+  }
+
+  // Pagination: 8 items × 30px + 7 × 3px = 261px → fits ~288px container
+  .pg {
+    gap: 3px;
+  }
+  .pg__item {
+    min-width: 30px;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 6px;
   }
 }

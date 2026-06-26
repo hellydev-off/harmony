@@ -155,10 +155,31 @@
     });
   }
 
+  // ─── Review text truncation (mobile only) ──────────────────────────────────
+  function initReviewTruncation() {
+    if (window.innerWidth > 767) return;
+    document.querySelectorAll('.review-card__text').forEach(function (el) {
+      if (el.dataset.truncated) return;
+      el.dataset.truncated = '1';
+      if (el.textContent.trim().length <= 200) return;
+      el.classList.add('review-card__text--clamped');
+      var btn = document.createElement('button');
+      btn.className = 'review-card__toggle';
+      btn.textContent = 'Показать полностью';
+      el.parentNode.insertBefore(btn, el.nextSibling);
+      btn.addEventListener('click', function () {
+        var clamped = el.classList.contains('review-card__text--clamped');
+        el.classList.toggle('review-card__text--clamped', !clamped);
+        btn.textContent = clamped ? 'Свернуть' : 'Показать полностью';
+      });
+    });
+  }
+
   $(document).ready(function () {
     console.log('Harmony theme ready');
 
     initMobileMenu();
+    window.setTimeout(initReviewTruncation, 50);
 
     // Doctor card → profile page navigation
     $(document).on('click', '[data-doctor-name]', function (e) {
